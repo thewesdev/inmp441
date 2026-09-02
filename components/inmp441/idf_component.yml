@@ -1,0 +1,4 @@
+version: "0.0.1"
+description: "implementation for inmp441 component"
+url: "https://github.com/thewesdev/inmp441"
+license: "MIT"

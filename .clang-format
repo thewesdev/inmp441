@@ -1,0 +1,8 @@
+BasedOnStyle: Google
+UseTab: Always
+IndentWidth: 4
+TabWidth: 4
+PointerAlignment: Right
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never

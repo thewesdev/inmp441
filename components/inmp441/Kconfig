@@ -1,0 +1,32 @@
+menu "INMP441"
+    config INMP441_I2S_CHANNEL
+        int "I2S Channel"
+        default 0
+        range 0 2
+        help
+            Channel Number of I2S
+    config INMP441_SCK_PIN
+        int "SCK Pin"
+        default 47
+        range 0 48
+        help
+            GPIO Number of SCK
+    config INMP441_SD_PIN
+        int "SD Pin"
+        default 48
+        range 0 48
+        help
+            GPIO Number of SD
+    config INMP441_WS_PIN
+        int "WS Pin"
+        default 45
+        range 0 48
+        help
+            GPIO Number of WS
+    config INMP441_LR_PIN
+        int "L/R Pin"
+        default 46
+        range 0 48
+        help
+            GPIO Number of L/R
+endmenu
