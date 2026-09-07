@@ -6,3 +6,8 @@ PointerAlignment: Right
 BreakBeforeBraces: Attach
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: Never
+IndentCaseLabels: true
+ContinuationIndentWidth: 4
+SpaceBeforeParens: Never
+AlignAfterOpenBracket: DontAlign
+ColumnLimit: 100
