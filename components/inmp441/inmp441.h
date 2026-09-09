@@ -1,14 +1,20 @@
-#ifndef __COMPONENT_INMP441__
-#define __COMPONENT_INMP441__
+#ifndef COMPONENT_INMP441_H
+#define COMPONENT_INMP441_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void inmp441_init();
+#include <stdint.h>
+
+#include "esp_err.h"
+
+esp_err_t inmp441_init(void);
+esp_err_t inmp441_stop(void);
+esp_err_t inmp441_read_samples(int32_t *buffer);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // __COMPONENT_INMP441__
+#endif // COMPONENT_INMP441_H
