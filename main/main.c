@@ -5,10 +5,10 @@
 
 #include <driver/uart.h>
 
-static const uint8_t SYNC_MARKER[4] = {0xAA, 0x55, 0xAA, 0x55};
+static int32_t buffer[512];
 
 void app_main(void) {
-	int32_t buffer[512];
+	int16_t sample_buffer[512];
 	inmp441_init();
 
 	ESP_ERROR_CHECK(uart_driver_install(UART_NUM_0, 256, 2048, 0, NULL, 0));
@@ -18,10 +18,9 @@ void app_main(void) {
 		inmp441_read_samples(buffer);
 
 		for (size_t i = 0; i < 512; i++)
-			buffer[i] = buffer[i] >> 8;
+			sample_buffer[i] = buffer[i] >> 16;
 
-		uart_write_bytes(UART_NUM_0, (const char *)SYNC_MARKER,
-						 sizeof(SYNC_MARKER));
-		uart_write_bytes(UART_NUM_0, (const char *)buffer, sizeof(buffer));
+		uart_write_bytes(UART_NUM_0, (const char *)sample_buffer,
+						 sizeof(sample_buffer));
 	}
 }

@@ -56,9 +56,6 @@ esp_err_t inmp441_init(void) {
 	i2s_chan_config_t chan_cfg =
 		I2S_CHANNEL_DEFAULT_CONFIG(CONFIG_INMP441_I2S_CHANNEL, I2S_ROLE_MASTER);
 
-	i2s_std_slot_config_t slot = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(
-		I2S_DATA_BIT_WIDTH_32BIT, I2S_SLOT_MODE_MONO);
-
 	// clang-format off
 	i2s_std_config_t std_cfg = {
 		.clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RATE),
