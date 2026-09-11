@@ -1,5 +1,7 @@
 .vscode
 
+dependencies.lock
+
 # macOS
 .DS_Store
 .AppleDouble
