@@ -9,11 +9,9 @@
 
 ## I2S
 
-sample rate: 16 kHz (fixed)
+sample rate: 16 kHz (default)
 slot mode: mono, left channel
 data/slot bit width: 32 bits
-
-> Sample rate and block size are currently hardcoded constants. Dynamic configuration (runtime-settable sample rate, block size, etc.) is planned for a future version.
 
 ## Menuconfig
 
@@ -70,9 +68,12 @@ git clone https://github.com/thewesdev/inmp441
 #include "inmp441.h"
 
 void app_main(void) {
-	inmp441_init();
+	uint16_t buffer_size = 512;
+	uint16_t sample_rate = 16000;
 
-	int32_t buffer[512];
+	inmp441_init(sample_rate, buffer_size);
+
+	int32_t *buffer = (int32_t *)malloc(buffer_size * sizeof(int32_t));
 
 	while (1) {
 		esp_err_t err = inmp441_read_samples(buffer);
