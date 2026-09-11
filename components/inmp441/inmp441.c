@@ -15,8 +15,8 @@ static i2s_chan_handle_t s_rx_handle = NULL;
 static QueueHandle_t s_sample_queue = NULL;
 static TaskHandle_t s_sensor_task_handle = NULL;
 static int32_t *s_buffer = NULL;
-static uint16_t s_sample_rate = 0;
-static uint16_t s_buffer_size = 0;
+static uint16_t s_sample_rate = 16000;
+static uint16_t s_buffer_size = 512;
 
 static void inmp441_sensor(void *args) {
 	(void)args;
