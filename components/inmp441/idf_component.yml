@@ -1,4 +1,10 @@
 version: "0.0.1"
-description: "implementation for inmp441 component"
+description: "Simple INMP441 Component for ESP32"
 url: "https://github.com/thewesdev/inmp441"
+repository: "https://github.com/thewesdev/inmp441"
 license: "MIT"
+tags:
+  - "inmp441"
+  - "i2s"
+  - "microphone"
+  - "audio"
